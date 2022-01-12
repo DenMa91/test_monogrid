@@ -20,7 +20,6 @@
 <script>
 export default {
     props: ['id'],
-    components:{Tilt},
     data() {
         return {
             images:[
