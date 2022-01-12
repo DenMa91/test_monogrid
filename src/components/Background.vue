@@ -11,8 +11,12 @@ export default {
 </script>
 
 <style>
+body{
+    overflow-x: hidden;
+    
+}
  #myvideo{
-     width: 100vw;
-     height: 100vh;
+     width: 150vw;
+     height: 150vh;
  }
 </style>

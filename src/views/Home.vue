@@ -14,12 +14,7 @@
             </div>
           </div>
             <div class="col-10">
-              <transition-group
-              enter-active-class="animated fade"
-              leave-active-class="animated fade">
-                  <Cards :search="search" v-if="search" style="animation-duration: 1s"/>
-                  <Carousel v-if="!search" style="animation-delay: 1s"/>
-              </transition-group>
+                  <Carousel style="animation-delay: 1s" :search="search"/>
             </div>
       </div>
   </main>
@@ -27,9 +22,8 @@
 
 <script>
 import Carousel from "../components/Carousel.vue"
-import Cards from "../components/Cards.vue"
 export default {
-    components: {Carousel, Cards},
+    components: {Carousel},
     data() {
       return {
         search:''

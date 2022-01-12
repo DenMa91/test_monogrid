@@ -7,7 +7,7 @@
     "modifier": 1,
     "slideShadows": true
     }' :pagination="true" class="mySwiper">
-        <swiper-slide v-for="image in images" :key="image.id">
+        <swiper-slide v-for="image in result" :key="image.id">
           <router-link :to="{name: 'imageDetails', params: {id: image.id}}">
             <img :src="image.link" :alt="image.title">
           </router-link>
@@ -34,12 +34,12 @@ import SwiperCore, {
 // install Swiper modules
 SwiperCore.use([EffectCoverflow,Pagination]);
 
-import gsap from 'gsap'
 export default {
   components: {
     Swiper,
     SwiperSlide,
   },
+  props:{search:String},
   data() {
     return {
         
@@ -55,6 +55,13 @@ export default {
         ]
         
     };
+  },
+  computed: {
+    result(){
+        if(this.search != ""){
+            return this.images.filter(image => image.description.includes(this.search))
+        }else{return this.images}
+    }
   },
 
   methods: {
