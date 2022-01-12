@@ -1,15 +1,15 @@
 <template>
   <main class="container details">
       <div class="row vh-100 align-items-center justify-content-center">
-          <div class="col-10 p-3 card-wrapper">
+          <div class="col-12 col-md-10 p-3 card-wrapper">
               <div class="row">
-                <div class="col-6">
+                <div class="col-12 col-md-6">
                     <img :src="images[id].link" :alt="images[id].title" class="img-fluid immagine">
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-md-6">
                     <h2 class="display-6">{{images[id].title}}</h2>
                     <p class="fs-4">{{images[id].description}}</p>
-                    <p class="fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, amet quam dolor assumenda quidem est vitae mollitia consequatur eum dicta minus similique soluta libero voluptatum ex sunt sed? Exercitationem et id pariatur nemo, perferendis, ut laborum nulla hic minus, ratione doloribus error obcaecati atque maiores officia omnis temporibus aperiam cupiditate nam debitis. Itaque, explicabo dicta? Magnam, sint in aut incidunt error temporibus expedita accusamus pariatur.</p>
+                    <p class="fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, amet quam dolor assumenda quidem est vitae mollitia consequatur eum dicta minus similique soluta libero voluptatum ex sunt sed? Exercitationem et id pariatur nemo, perferendis, ut laborum nulla hic minus</p>
                 </div>
               </div>
           </div>
