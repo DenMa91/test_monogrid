@@ -7,7 +7,7 @@
           <div class="col-12 mt-5 mb-3">
             <div class="row justify-content-center">
               <div class="col-6">
-                <form>
+                <form @submit.prevent>
                   <input v-model="search" type="text" placeholder="cerca la tua immagine preferita" class="form-control">
                 </form>
               </div>

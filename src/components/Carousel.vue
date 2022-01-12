@@ -5,7 +5,7 @@
     "stretch": 0,
     "depth": 100,
     "modifier": 1,
-    "slideShadows": true
+    "slideShadows": true,
     }' :pagination="true" class="mySwiper">
         <swiper-slide v-for="image in result" :key="image.id">
           <router-link :to="{name: 'imageDetails', params: {id: image.id}}">
