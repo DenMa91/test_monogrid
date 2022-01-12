@@ -59,7 +59,7 @@ export default {
   computed: {
     result(){
         if(this.search != ""){
-            return this.images.filter(image => image.description.includes(this.search))
+            return this.images.filter(image => image.description.includes(this.search.toLowerCase()))
         }else{return this.images}
     }
   },
