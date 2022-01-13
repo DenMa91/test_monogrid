@@ -7,20 +7,21 @@
           <div class="col-12 mt-5 mb-3">
             <div class="row justify-content-center">
               <div class="col-10 col-md-6">
-                <form @submit.prevent>
+                <form class="search" @submit.prevent>
                   <input v-model="search" type="text" placeholder="cerca la tua immagine preferita" class="form-control">
                 </form>
               </div>
             </div>
           </div>
             <div class="col-10">
-                  <Carousel style="animation-delay: 1s" :search="search"/>
+                  <Carousel class="carousel" style="animation-delay: 1s" :search="search"/>
             </div>
       </div>
   </main>
 </template>
 
 <script>
+import gsap from 'gsap'
 import Carousel from "../components/Carousel.vue"
 export default {
     components: {Carousel},
@@ -28,6 +29,12 @@ export default {
       return {
         search:''
       }
+    },
+
+    mounted() {
+      gsap.timeline().from('.titolo',{scale:5,y:-1000, opacity:0, ease:'power2', duration:1 })
+                     .from('.search',{scale:5, y:-1200, opacity:0, ease:'power2', duration:1 })
+                     .from('.carousel',{scale:5, y:1200, opacity:0, ease:'power2', duration:1 })
     },
 }
 </script>

@@ -11,5 +11,7 @@ export default {
 </script>
 
 <style>
- 
+ #myVideo{
+     transform: scale(1.2);
+ }
 </style>

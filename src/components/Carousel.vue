@@ -1,6 +1,6 @@
 <template>
 <div class="swiper-wrap">
-    <swiper :effect="'coverflow'" :grabCursor="true" :centeredSlides="true" :slidesPerView="'auto'" :coverflowEffect='{
+    <swiper :effect="'coverflow'" :grabCursor="true" :centeredSlides="true" :slidesPerView="'auto'" :initialSlide="2" :coverflowEffect='{
     "rotate": 50,
     "stretch": 0,
     "depth": 100,
@@ -83,6 +83,7 @@ export default {
   color: #000;
   margin: 0;
   padding: 0;
+  cursor: url('../assets/cursore.png'), auto !important;
 }
 
 .swiper {
@@ -101,6 +102,7 @@ export default {
 }
 
 .swiper-slide img {
+  cursor: url('../assets/cursore.png'), auto !important;
   display: block;
   width: 100%;
 }

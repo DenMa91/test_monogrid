@@ -10,6 +10,7 @@
                     <h2 class="display-6">{{images[id].title}}</h2>
                     <p class="fs-4">{{images[id].description}}</p>
                     <p class="fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, amet quam dolor assumenda quidem est vitae mollitia consequatur eum dicta minus similique soluta libero voluptatum ex sunt sed? Exercitationem et id pariatur nemo, perferendis, ut laborum nulla hic minus</p>
+                    <router-link to="/" class="btn-custom">torna alla ricerca</router-link>
                 </div>
               </div>
           </div>
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+import gsap from 'gsap'
 export default {
     props: ['id'],
     data() {
@@ -33,6 +35,10 @@ export default {
             {id:7, title:'albero', description:'un grande albero crea una grande ombra', link:"https://swiperjs.com/demos/images/nature-8.jpg"},
             ],
         }
+    },
+
+    mounted() {
+        gsap.from('.card-wrapper', {scale:5, opacity:0, ease:'powerOut2', duration:0.5})
     },
 
 
@@ -56,5 +62,25 @@ export default {
 
 .immagine{
     border-radius: 10px;
+}
+
+.btn-custom{
+    position: absolute;
+    bottom:15px;
+    right: 15px;
+    background-color: cornflowerblue;
+    border-radius: 50px;
+    border: 2px solid white;
+    padding: 5px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.btn-custom:hover{
+    color: cornflowerblue;
+    border: 2px solid cornflowerblue;
+    background-color: white;
+    transition: 0.5s;
 }
 </style>
