@@ -1,5 +1,5 @@
 <template>
-  <main class="container details">
+  <main class="container-fluid details vh-100 overflow-hidden">
       <div class="row vh-100 align-items-center justify-content-center">
           <div class="col-12 col-md-10 p-3 card-wrapper">
               <div class="row">
@@ -10,7 +10,7 @@
                     <h2 class="display-6">{{images[id].title}}</h2>
                     <p class="fs-4">{{images[id].description}}</p>
                     <p class="fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, amet quam dolor assumenda quidem est vitae mollitia consequatur eum dicta minus similique soluta libero voluptatum ex sunt sed? Exercitationem et id pariatur nemo, perferendis, ut laborum nulla hic minus</p>
-                    <router-link to="/" class="btn-custom">torna alla ricerca</router-link>
+                    <button @click="comeBack" class="btn-custom">torna alla ricerca</button>
                 </div>
               </div>
           </div>
@@ -34,12 +34,24 @@ export default {
             {id:6, title:'ciliegio', description:'fioritura fiori di ciliegio', link:"https://swiperjs.com/demos/images/nature-7.jpg"},
             {id:7, title:'albero', description:'un grande albero crea una grande ombra', link:"https://swiperjs.com/demos/images/nature-8.jpg"},
             ],
+
+            animation:false
         }
     },
 
     mounted() {
-        gsap.from('.card-wrapper', {scale:5, opacity:0, ease:'powerOut2', duration:0.5})
+        gsap.from('.card-wrapper', {scale:10, duration:1})
     },
+
+    methods: {
+        comeBack(){
+            gsap.timeline({onComplete: this.leave}).to('.card-wrapper', {scale:0, opacity:0, duration:1})               
+        },
+
+        leave(){
+            this.$router.push({path: '/'})
+        }
+    }
 
 
 }
@@ -52,9 +64,8 @@ export default {
 }
 
 .card-wrapper{
-    background: rgba(255, 255, 255, 0.486);
+    background: rgba(255, 255, 255, 0.383);
     border-radius: 20px;
-    backdrop-filter: blur(10px);
     border-top: 1px solid white;
     border-left: 1px solid white;
     box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.52);
